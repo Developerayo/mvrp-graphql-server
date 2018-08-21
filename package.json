@@ -1,0 +1,21 @@
+{
+  "name": "mvrp-over-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "datasource.js",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.1.4",
+    "apollo-server": "^2.0.5",
+    "graphql": "^0.13.2"
+  },
+  "devDependencies": {
+    "esm": "^3.0.79"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r esm server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
