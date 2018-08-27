@@ -1,6 +1,6 @@
 ## MVRD GraphQL Server
 
-The server for my #GraphQL-Over-Rest Article.
+The GraphQL Server layer for [MVRP REST API](https://github.com/apollographql/mvrp).
 
 ## Running on Glitch
 
