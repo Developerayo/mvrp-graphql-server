@@ -15,6 +15,6 @@ export class MvrpAPI extends RESTDataSource {
       plateNumber
     });
 
-    return result[0];
+    return result;
   }
 };
