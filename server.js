@@ -1,8 +1,6 @@
 import { ApolloServer, gql } from 'apollo-server';
 import { MvrpAPI } from './datasource';
 
-//console.log(new MvrpAPI().getAllCars());
-
 const typeDefs = gql`
   type Car {
     id: Int!
