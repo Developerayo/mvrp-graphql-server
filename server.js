@@ -15,17 +15,17 @@ const typeDefs = gql`
   }
 
   type Query {
-    searchCars(plateNumber: String!): Car
-    getAllCars: [Car]
+    car(plateNumber: String!): Car
+    cars: [Car]
   }
 `;
 
 const resolvers = {
   Query: {
-    searchCars: async (root, { plateNumber }, { dataSources }) => {
-      return dataSources.mvrpAPI.searchCars(plateNumber);
+    car: async (root, { plateNumber }, { dataSources }) => {
+      return dataSources.mvrpAPI.getACar(plateNumber);
     },
-    getAllCars: async (root, args, { dataSources }) => {
+    cars: async (root, args, { dataSources }) => {
       return dataSources.mvrpAPI.getAllCars();
     }
   }

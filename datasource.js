@@ -10,7 +10,7 @@ export class MvrpAPI extends RESTDataSource {
     return this.get('cars');
   }
 
-  async searchCars(plateNumber) {
+  async getACar(plateNumber) {
     const result = await this.get('car', {
       plateNumber
     });
