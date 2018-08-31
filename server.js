@@ -8,8 +8,8 @@ const typeDefs = gql`
     color: String!
     model: String!
     chasisNumber: String!
-    status: String!
-    productionYear: Int!
+    vehicleStatus: String!
+    yearOfManufacture: Int!
     issueDate: String!
     expiryDate: String!
   }
