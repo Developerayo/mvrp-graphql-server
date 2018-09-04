@@ -1,4 +1,5 @@
 import { ApolloServer, gql } from 'apollo-server';
+import mapKeys from 'lodash/mapKeys';
 import { MvrpAPI } from './datasource';
 
 const typeDefs = gql`
@@ -24,10 +25,16 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     car: async (root, { plateNumber }, { dataSources }) => {
-      return dataSources.mvrpAPI.getACar(plateNumber);
+      const car = await dataSources.mvrpAPI.getACar(plateNumber);
+      return mapKeys(car, (value, key) => {
+         if (key === 'status') return 'vehicleStatus';
+         if (key === 'productionYear' ) return 'yearOfManufacture';
+         return key;
+      });
     },
     cars: async (root, args, { dataSources }) => {
-      return dataSources.mvrpAPI.getAllCars();
+      const cars = await dataSources.mvrpAPI.getAllCars();
+      return cars.map(car => ({...car, vehicleStatus: car.status, yearOfManufacture: car.productionYear}));
     }
   }
 };
