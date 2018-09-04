@@ -20,6 +20,7 @@ const typeDefs = gql`
   }
 `;
 
+
 const resolvers = {
   Query: {
     car: async (root, { plateNumber }, { dataSources }) => {
