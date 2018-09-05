@@ -22,7 +22,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    car: async (root, { plateNumber }, { dataSources }) =>
+    car: (root, { plateNumber }, { dataSources }) =>
       dataSources.mvrpAPI.getACar(plateNumber),
     cars: (root, args, { dataSources }) => dataSources.mvrpAPI.getAllCars(),
   },
